@@ -1,0 +1,57 @@
+date|user|size
+11-01-15|user1|5GB
+11-01-15|user2|5GB
+11-02-15|user1|6GB
+11-02-15|user2|6GB
+11-03-15|user1|6GB
+11-04-15|user1|6GB
+11-04-15|user1|6GB
+11-04-15|user1|6GB
+
+user2 appears on list 2 times
+user1 appears on list 8 times
+
+startdate|enddate|user|nbrOfDays
+11-01-15|11-04-15|user1|8
+11-01-15|11-04-15|user2|2
+
+read through file and put each into an array
+for each into an array, parse out to individual fields
+if date != days back date, ignore
+else capture number of days for each user
+	* user|nbrofdays
+	* if user = "user1", 
+
+need an array within an array
+first loop, loop through the list of offended users
+for each user, second loop goes through o
+
+loop though the list of offenders and put each unique user into another array that holds user and nbr of times, with initially set to 0
+array will hold user|nbrofdays
+user1 0
+user2 0
+
+array[index] = user1|1
+array[index] = user1|2
+
+for each user, go through array of unique offenders, if found, then +1 to the nbr of days to that user
+
+
+retrieve value out of array, and put back new value
+user1|1 ~ user2|1
+
+retrieve 2nd value, put back into the array at that same index 
+	* how to achieve this
+
+
+for each value in array
+write out:
+for this date to this date, these are the repeated offenders and the number of days they are in there
+user1 8
+user2 2
+
+function to read into a file and put each line into an array (offenders_list_array)
+function to put each unique offenders into an array (unique_offenders_list_array)
+function to retrieve value, add one and put back to that same index 
+function to have doulbe loop to go through each individual user and compare it to the unique offenders, if same, then add to nbr of days then break
+get starting index of where the date needs to start

@@ -1,0 +1,22 @@
+testing long running process. sleeping at..
+Mon Nov 30 16:11:19 CST 2015
+process id 2420 has been running for 00 minutes
+mon_process_time.sh: Next check 1 min
+process id 2420 has been running for 01 minutes
+mon_process_time.sh: Next check 1 min
+process id 2420 has been running for 02 minutes
+mon_process_time.sh: Process 2420 is running long. cmd: ps -ef | grep longruntest.sh | grep -v 'grep\|view\|vi\|mon_process_time.sh' | awk '{print }'
+mon_process_time.sh: Next check 1 min
+waking up at...
+Mon Nov 30 16:13:24 CST 2015
+testing long running process. sleeping at..
+Tue Dec  1 10:42:18 CST 2015
+process id 2441 has been running for 00 minutes
+mon_process_time.sh: Next check 1 min
+process id 2441 has been running for 01 minutes
+mon_process_time.sh: Next check 1 min
+process id 2441 has been running for 02 minutes
+mon_process_time.sh: Process 2441 is running long. cmd: ps -ef | grep longruntest.sh | grep -v 'grep\|view\|vi\|mon_process_time.sh' | awk '{print }'
+mon_process_time.sh: Next check 1 min
+waking up at...
+Tue Dec  1 10:44:23 CST 2015

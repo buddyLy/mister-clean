@@ -1,0 +1,4 @@
+user1/	60M	/Users/lcle/tmp/users/user1//NETGEARGenieInstaller.dmg	
+user2/	63M	/Users/lcle/tmp/users/user2//Karaoke_Silent_Lucidity_-_Queensrÿche.mp4	
+user2/	19M	/Users/lcle/tmp/users/user2//Wedding Mega Pack-SD.mp4	
+

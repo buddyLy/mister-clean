@@ -1,0 +1,7 @@
+2015-11-03 16:46:18~3967~misterclean.sh~clean_local~279 ENTERING FUNCTION
+2015-11-03 16:46:18~3967~misterclean.sh~check_user_spaceusage~208 ENTERING FUNCTION
+2015-11-03 16:46:18~3967~misterclean.sh~get_bad_users~88 ENTERING FUNCTION
+2015-11-03 16:46:18~3967~misterclean.sh~get_listofbadfiles_peruser~126 ENTERING FUNCTION
+2015-11-03 16:46:18~3967~misterclean.sh~get_listofbadfiles_peruser~126 ENTERING FUNCTION
+2015-11-15 15:55:51~28559~~error_exit~64 ERROR Error source file doesn't exist
+2015-11-15 15:59:45~28600~~error_exit~64 ERROR Error source file doesn't exist

@@ -1,0 +1,700 @@
+#!/bin/bash
+##===================================================================
+#shell scripts functionality
+#* alert if /u is bigger % full with only x size left
+#* alert if each user directory is more than x size
+#* alert if each applicaiton directory is more than x size
+#* alert if there exist a script that's been running longer than x 
+#* find files bigger than x
+#* find files older than x
+#* which group id belongs to
+#	- depending on id, go to appropriate hdfs folder
+#* move files to folder
+#* send report/emails to users
+#* find hdfs .trash files bigger than x
+#* find hdff .trash files older than x
+#* each hdfs mount shoudld not bet
+#* identify repeated offenders
+#** leaverage what Dan already has in his script that generates the report
+#** leaverage the monitoring 
+#** leaverage shell script from hadoop dba
+#https://wiki.wal-mart.com/index.php/Hadoop_Space_Management
+##============================================================
+
+
+#whois
+#id
+#logger utility
+#adquery
+#groups
+
+function check_config_variable
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	get_current_time
+	local log_header=${current_time}${DELIMITER}${process_id}${DELIMITER}${this_script}${DELIMITER}${FUNCNAME[0]}${DELIMITER}$
+	#-----constants------#	
+	# got to error exit result of expression is false
+	[[ -n "${TRUE}" ]] || error_exit "${log_header}${LINENO}: Config constants not set. rc $?"
+	[[ -n "${FALSE}" ]] || error_exit "${log_header}${LINENO}: Config constants irectory not set. rc $?"
+	[[ -n "${SUCCESS}" ]] || error_exit "${log_header}${LINENO}: Config constants not set. rc $?"
+	[[ -n "${ERROR}" ]] || error_exit "${log_header}${LINENO}: Config constants not set. rc $?"
+
+	#-----directory structure------#	
+	[[ -n "${home}" ]] || error_exit "${log_header}${LINENO}: Config directory structure not set. rc $?"
+	isDirectory ${home} || error_exit "${log_header}${LINENO} Home directory doesn't exist" 
+	[[ -n "${logdir}" ]] || error_exit "${log_header}${LINENO}: Config directory structure not set. rc $?"
+	isDirectory ${logdir} || mkdir -p ${logdir}	|| error_exit "${log_header}${LINENO}: Config directory structure not set. rc $?" #if log folder doesn't exist, then create it
+	
+	#-----program options------#	
+	[[ -n "${clean_hdfs}" ]] || error_exit "${log_header}${LINENO}: Config program options not set. rc $?"
+	[[ -n "${clean_local}" ]] || error_exit "${log_header}${LINENO}: Config program options not set. rc $?"
+
+	#-----program variables------#	
+	[[ -n "${logfile}" ]] || error_exit "${log_header}${LINENO}: Config program variables not set. rc $?"
+	isFile "${logfile}" || touch ${logdir}/${logfile} || error_exit "${log_header}${LINENO}: error creating logfile. rc $?"
+	[[ -n "${logfile_error}" ]] || error_exit "${log_header}${LINENO}: Config program variables not set. rc $?"
+	isFile "${logfile_error}" || touch ${logdir}/${logfile_error} || error_exit "${log_header}${LINENO}: Config error creating logfile. rc $?"
+}
+
+function initialize
+{
+	#captures error on commands that piped together, can also retrieved through ${PIPESTATUS[0]} ${PIPESTATUS[1]}
+	set -o pipefail	
+	source ./misterclean.cfg || error_exit "${LINENO} ERROR Error source file doesn't exist"
+	source ./util_func.sh || error_exit "${LINENO} ERROR Error source file doesn't exist"
+	process_id=$$
+	main_script=$(basename $0)
+	this_script=${BASH_SOURCE[0]}
+	verify_unix_shell ${supported_os} 
+	if [[ $? -ne ${SUCCESS} ]];then
+		os_is_supported=${FALSE}
+		#if bypass warning is false, then exit program
+		if (( !bypass_warning )); then 
+			error_exit "${FUNCNAME[0]}${DELIMITER}${LINENO} ERROR Unsupported unix version"; 
+		fi
+	else
+		os_is_supported=${TRUE}
+	fi
+}
+
+function get_main_logheader
+{
+	get_current_time
+	function_name=${FUNCNAME[1]} #this will store the function name of the direct caller
+	log_header=${current_time}${DELIMITER}${process_id}${DELIMITER}${this_script}${DELIMITER}${function_name}${DELIMITER}
+}
+
+function check_local_mount
+{
+	#local log_header=${current_time}${DELIMITER}${process_id}${DELIMITER}${this_script}${DELIMITER}${FUNCNAME[0]}${DELIMITER}$
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	local check_remote_server=${FALSE}
+	has_enough_space "${mount_space_needed}" "${mount_location}" "${check_remote_server}" || error_exit "${FUNCNAME[0]}${DELIMITER}${LINENO} ERROR checking for enough space $?"
+}
+
+function check_userdir_permission
+{
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	local userdir=$1
+	if [[ ${os_is_supported} -eq ${TRUE} ]];then
+		filemode=$(stat -c %a "${user_basedir}/${user}" || echo "error")
+		if [[ ${filemode} == "error" ]]; then
+			error_exit "${LINENO} ERROR Error getting user permission"
+		fi
+	else
+		filemode=$(stat -f "%Lp" "${user_basedir}/${user}" || echo "error")
+		if [[ ${filemode} == "error" ]]; then
+			error_exit "${LINENO} ERROR Error getting user permission"
+		fi
+	fi
+
+	#get the user permissino of group and other
+	group_other_permission=${filemode:1:2}	#the last two digits
+	if [[ ${group_other_permission} == "77" || ${group_other_permission} == "55" ]];then
+		return ${SUCCESS}
+	else
+		return ${ERROR}
+	fi
+}
+
+
+#generate bad users report
+function generate_badusers_report
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	local myreport=$1	
+	#spit out the report to a file
+	log_msg "Generating bad users report to ${report_file}. Nbr of bad users found: ${#bad_user_list[*]}" "${LOGGER_INFO}"
+	echo -e "${myreport}" >> ${report_file} 
+
+	#sort by user size
+	echo -e "${myreport}" > ${report_file}.tmp && sort --reverse -t "|" -k 3 ${report_file} > ${sorted_badusers_report}
+}
+
+#generate user error report
+function generate_usererror_report
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	#write all users that weren't querable into an error file
+	if [[ ${#query_usererror_list[*]} -ne 0 ]];then
+		get_current_time
+		#zero out the report
+		echo "" > ${report_file_error}
+		echo "${current_time} The following users were unquerable" >> ${report_file_error}		
+		for user in ${query_usererror_list[*]}; do
+			echo ${user} >> ${report_file_error}		
+		done
+	fi
+}
+
+function get_bad_users
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	#for all users found, find users that's over limit 
+	query_usererror_list=()
+	bad_user_list=()
+
+	#if user has other file permission as 55 or 77, then go through with du
+	#else add to file permission error
+
+	#search for directories over limit
+	for user in $(ls -F ${user_basedir} 2>>${logdir}/${logfile_error} | grep "/" 2>>${logdir}/${logfile_error} || echo "error")
+	do
+		if [[ ${user} == "error" ]];then
+			log_msg "${LINENO} ERROR Error getting list of users"
+			return ${FALSE}
+		fi
+	
+		#if user doesn't give permission, move to next user
+		check_userdir_permission ${user}
+		if [[ $? -eq ${ERROR} ]];then
+			log_msg "${LINENO} WARNING Potential issues while querying user ${user}"
+			query_usererror_list+=("${user}|${filemode}")
+			continue
+		fi
+		
+		log_msg "Checking user ${user}" "${LOGGER_INFO}"
+		#local bad_user=$(du -s ${user_basedir}/${user} 2>>${logfile_error}| awk -v limit=${user_total_limit} 'BEGIN{} {if($1>limit) {$1=$1/(1024*1024);print $0}}' 2>>${logfile_error} || echo "error")
+		local bad_user=$(du -s ${user_basedir}/${user} 2>>${logdir}/${logfile_error}| awk -v limit=${user_total_limit} 'BEGIN{} {if($1>limit) {$1=$1/(1024*1024);print $0}}' 2>>${logdir}/${logfile_error})
+
+		#if bad user is returned, then add to bad user report 
+		if [[ ${bad_user} != "" ]];then
+			#variables below are used to write out to the report
+			local parsed_word=(${bad_user})	
+			size=${parsed_word[0]}
+			userid=${user}
+			date=$(date +%m-%d-%y)
+			
+			#write value to the report using double redirection
+			generate_report "${#report_columns_array[*]}" "${!report_columns_array[0]}" "${!report_columns_array[1]}" "${!report_columns_array[2]}"
+
+			log_msg "Adding user ${user} to bad list" "${LOGGER_INFO}"
+			#bad_users="${bad_users} ${user}"
+			bad_user_list+=(${user})
+		fi
+	done
+
+	#generate report
+	generate_badusers_report ${report}
+
+	#generate error report
+	generate_usererror_report
+}
+
+function get_listofbadfiles_peruser
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	local user=$1
+	echo "get list of bad files for user ${user}"
+	#IFS=$'\n' #separate by line
+	#find all files greater than max_file_size and older than retention period
+	#find ~/tmp/users/user1 -size +13M -atime +0d -type f -print0 | xargs -0 ls); do echo $x; myarray+=($x); done; echo "length: ${#myarray[@]}
+	#using xargs on print0 to prevent files with crazy separator messing up the file storage in an array
+	local cmd="find ${user_basedir}/${user} -size +${max_file_size} -atime +${retention_period}d -type f -print0 2>>${logfile_error} | xargs -0 ls 2>>${logfile_error}"
+	#list_of_bad_files=$(find ${user_basedir}/${user} -size +${max_file_size} -atime +${retention_period}d -type f -print0 | xargs -0 ls || echo "error")
+	#local bad_files=$(${cmd} || echo "error")
+	local bad_files=$(find ${user_basedir}/${user} -size +${max_file_size} -atime +${retention_period}d -type f -print0 2>>${logdir}/${logfile_error} | xargs -0 ls 2>>${logdir}/${logfile_error} || echo "error")
+	bad_file_list=()
+	if [[ ${bad_files} == "error" ]];then
+		echo "Error executing command: ${cmd}"
+		return ${FALSE}
+	else
+		#make an array from return values
+		IFS=$'\n'
+		for file in ${bad_files}; do
+			#echo "putting file in list: $file"
+			bad_file_list+=("${file}")	
+		done
+		unset IFS
+	fi
+}
+
+function is_file_old
+{
+	log_msg "${LINENO} ENTERING FUNCTION" ${LOGGER_INOF}
+	myfile=$1	
+	space_in_mb=$(du -m ${myfile} | awk '{print $1}') || error_exit "${LINENO} Error file getting file size"
+	#if [[ ${space_in_mb} -gt ${max_file_size} ]];then
+		#is file greater than x days
+		oldfile=$(find ${myfile} -atime +${retention_period}d -type f -ls | wc -l || return "error")
+		if [[ ${list_of_old_files} == "error" ]];then
+			return ${ERROR}
+		else
+			echo "here are the lsit of old files for user $"
+		fi
+	#fi
+	return ${FALSE}
+}
+
+#notify users of all files that are over the maximum allowed 
+function notify_bad_users
+{
+	local file=$1
+	shift
+	local user=$2
+	msg="Hey ${user}, Your file ${file} is over the size limit and has been moved here"
+	echo "${msg}"
+	#echo "Your file ${file} is over size limit and has been moved here"| mailx -s "Your space usage in $server exceeds the 300MB limit" lcle@wal-mart.com
+}
+
+function notify_admin
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "$LOGGER_INFO"
+	local bad_users=("${!1}")
+}
+
+function generate_report
+{
+	local array_size=$1	
+	local j
+	#write out each field value. notice it's using the double redirection to get the actual value of the variable name instead of the name of the string 
+	for (( j=0; j<${array_size}; j++ ));do
+		shift
+		local column_value=$1
+		report="${report}${column_value}|"
+	done
+	report="${report}\n"
+	#echo -e "report so far: \n$report"
+}
+
+function initialize_report
+{
+	#make an array out of the report headers
+	IFS="," && report_columns_array=(${report_columns}) || return ${FALSE}
+	report=""
+	unset IFS
+}
+
+function isCompared
+{
+	local compared_value=$1
+	for eachvalue in ${already_compared[*]}; do
+		if [[ ${compared_value} == ${eachvalue} ]];then
+			return ${TRUE}
+		fi
+	done
+	return ${FALSE}
+}
+
+#read the file into an array
+function readfile_into_array
+{
+	local myfile=$1
+	suspected_users=()	
+	#verify_unix_shell "${supported_os}"
+	#if [[ $? -eq ${SUCCESS} ]];then
+	if [[ ${os_is_supported} -eq ${TRUE} ]];then
+		#linux bash date implementation
+		local daysago=$(date --date="${report_days_back} days ago" ${report_date_format} || echo "error")
+		if [[ ${daysago} == "error" ]];then
+			error_exit "${LINENO} ERROR calculating days back"
+		fi
+	else
+		#darwin bash date implementation
+		local daysago=$(date -j -v-${report_days_back}d ${report_date_format} || echo "error")
+		if [[ ${daysago} == "error" ]];then
+			error_exit "${LINENO} ERROR calculating days back"
+		fi
+	fi
+	
+	local founddate=${FALSE}
+	IFS=$'\n' read -d '\n' -r -a report_array < ${myfile} 
+	#|| error_exit "${LINENO} Error putting bad users report into array" 
+	unset IFS
+
+	#find offenders users by provided date
+	for line in ${report_array[*]}; do
+		local parsedwords=($(echo ${line} | tr '|' "\n"))	
+		local thedate=${parsedwords[0]}
+		local theuser=${parsedwords[1]}
+		local thesize=${parsedwords[2]}
+		
+		#skip the first line 
+		if [[ $thedate == "date" ]];then
+			continue
+		fi
+		
+		#echo "line: $line ~ date: $thedate theuser: $theuser"
+		if [[ ${founddate} -eq ${FALSE} ]];then
+			if [[ ${daysago} != ${thedate} ]]; then
+				continue
+			else
+				founddate=${TRUE}
+			fi
+		fi
+		#echo "putting to list: ${thedate}|${theuser}|${thesize}"
+		suspected_users+=("${thedate}|${theuser}|${thesize}")
+	done
+
+	if [[ ${#suspected_users[*]} -eq 0 ]];then
+		#error_exit "${LINENO} ERROR Please check nbr of days back, it might go beyond report kept date or report of bad user is empty"
+		log_msg "${LINENO} WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty"
+		return ${ERROR}
+	fi 
+	echo "suspected users:\n ${suspected_users[*]}"
+}
+
+function generate_repeatedoffenders_report
+{
+	local offenders_report=""
+	for each_offender in ${repeated_offenders[*]};do
+		offenders_report="${offenders_report}${each_offender}|\n"
+	done
+	echo "Generating offenders report: ${report_repeated_offenders}"
+	echo -e "${offenders_report}" > ${report_repeated_offenders}
+}
+
+function find_repeated_offenders
+{
+	#loop through each user and find repeated offenders
+	already_compared=()
+	repeated_offenders=()
+	for eachuser in ${suspected_users[*]}; do
+		local usercount=0
+		local parsedwords=($(echo ${eachuser} | tr '|' "\n"))
+		local theuser=${parsedwords[1]}
+
+		#go to next loop if the user ha already been compared
+		isCompared "${theuser}" || continue
+
+		#add to the list of already been compared
+		already_compared+=("${theuser}")
+		
+		#loop thru same array and count up the nbr of times on the bad list
+		for each_in_report in ${suspected_users[*]};do
+			local parsedwords2=($(echo ${each_in_report} | tr '|' "\n"))	
+			local theuser2=${parsedwords2[1]}
+			if [[ $theuser == $theuser2 ]];then
+				(( usercount++ ))				
+			fi
+		done
+
+		local offended_user="${theuser}|${usercount}"
+		repeated_offenders+=("$offended_user") 
+	done
+
+	echo "here are the repeated offenders\n: ${repeated_offenders[*]}"
+	generate_repeatedoffenders_report
+}
+
+function check_user_spaceusage
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+
+	#initilize to start a brand new report
+	initialize_report || error_exit "${LINENO} ERROR Error getting report header"
+	
+	#for each user that has passed their limit, check each files and move
+	get_bad_users || error_exit "${LINENO} Error getting list of bad users"
+
+	#read the bad users report into an array
+	readfile_into_array ${home}/${report_file} 
+	#if error is returned, there's a possibility that the report hasn't kept the history long enough, in that case, do for all instead of date range
+	if [[ $? -eq ${ERROR} ]];then
+		report_days_back=0
+		log_msg "${LINENO} Recalling function to read into array without date range"
+		readfile_into_array ${home}/${report_file} 
+	fi
+
+	#find repeated offenders
+	find_repeated_offenders
+}
+
+function check_user_spaceusage_two
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	#for each user that has passed their limit, check each files and move
+	get_bad_users || error_exit "${LINENO} Error getting list of bad users"
+	
+	#echo "bad user list: ${bad_user_list}"
+	initialize_report || error_exit "${LINENO} ERROR Error getting report header"
+
+	#for each bad users, get the files that are over limit 
+	for eachuser in ${bad_user_list[@]}
+	do
+		userid=${eachuser}
+		file_list_peruser=() #clear out the current list
+		#get list of files for each user
+		get_listofbadfiles_peruser ${eachuser} || error_exit "${LINENO} Error getting list of files over limit"
+		
+		echo "length is: ${#bad_file_list[@]}"
+		for eachfile in "${bad_file_list[@]}"
+		do
+			file="${eachfile}"
+			size=$(du -h "${file}" 2>>${logdir}/${logfile_error}| awk '{print $1}' 2>>${logdir}/${logfile_error} || echo "error")
+			if [[ ${size} == "error" ]];then
+				error_exit "${LINENO} ERROR Error file size"
+			fi
+
+			file_list_peruser+=(${eachfile})
+			#move_file_out ${eachfile}
+			#notify_bad_users ${eachfile} ${eachuser}
+			#the ! points to the value of the variable 
+			generate_report "${#report_columns_array[*]}" "${!report_columns_array[0]}" "${!report_columns_array[1]}" "${!report_columns_array[2]}"
+		done
+		#notify_admin ${eachuser} file_list_peruser[@]
+	done
+	#spit out the report to a file
+	echo -e "${report}" > ${report_file}
+}
+
+function check_user_group
+{
+	log_msg "${LOG_HEADER} ENTERING FUNCTION ${LOGGER_INOF}"
+	user=$1
+	id ${user}
+	#do something here to get the group of the user belongs to
+}
+
+function move_file_out
+{
+	log_msg "${LINENO} ENTERING FUNCTION ${LOGGER_INOF}"
+
+	#check_user_group
+	if [[ ${group} == "MEP" ]];then
+		echo "moving to MEP hdfs folder"
+	elif [[ ${group} == "CKP" ]];then
+		echo "moving to CKP hdfs folder"
+	elif [[ ${group} == "CIQ" ]];then
+		echo "moving to CIQ hdfs folder"
+	else
+		echo "moving files to somwhere"
+	fi	
+}	
+
+#function send_reason_mail
+#{
+#	msg="You have surpassed your limit. Your files has been moved here"
+#	subject="File size alert"
+#	email="lcle"
+#	#get first and last name
+#	echo "msg" | mailx -s "${subject}" ${email}@wal-mart.com
+#}
+
+function clean_local
+{
+	log_msg "${LINENO} ENTERING FUNCTION" "${LOGGER_INFO}"
+	#check_local_mount
+	check_user_spaceusage || return ${FALSE}
+	return ${SUCCESS}
+}
+
+function clean_hdfs
+{
+	echo "${LOG_HEADER} ENTERING FUNCTION"
+	return ${SUCCESS}
+}
+
+#main
+function main
+{
+	initialize
+	check_config_variable
+	clean_local	|| error_exit "${LINENO} ERROR Error cleaning local"
+	#clean_hdfs || error_exit "Error cleaning hdfs" 
+}
+
+#script >${logdir}/${logfile} 2>${logdir}/${logfile_error}
+#main
+
+######################################################
+#Unit Testing starts here
+#This unit testing will not execute under these conditions:
+# 	- if sourced, ie, sourced by another program
+#	- called by another program.
+#Unit test cases will execute if run this shell script by itself
+######################################################
+(
+	#bash_source at 0 holds the actual name, if kicked off from another program, base_source is not itself, then exit
+	#since we wrapped this in a subshell "( )", then it will only exit the subshell not the actual program
+	[[ "${BASH_SOURCE[0]}" == "${0}" ]] || exit 0
+
+	function init_unittest
+	{
+		logfile="unittest/misterclean_unittest.log"
+		logfile_error="unittest/misterclean_error_unittest.log"
+		unittest_file="unittest/unit_test.log"
+		report_file_error="unittest/report_error.txt"
+		report_file="unittest/baduser_unittest_report.txt"
+		report_repeated_offenders="unittest/repeated_offenders.txt"
+		local mydate=$(date)
+		echo "******Starting unit tests at ${mydate}*******" >> ${unittest_file}
+	}
+	
+	#mycfgfile="/my/config/file/program_config.cfg"
+	function assertEquals
+	{
+		msg=$1; shift
+		expected=$1; shift
+		actual=$1; shift
+		/bin/echo -n "$msg: " >> ${unittest_file}
+		if [ "$expected" != "$actual" ]; then
+			echo "FAILED: EXPECTED=$expected ACTUAL=$actual" >> ${unittest_file}
+		else
+			echo "PASSED" >> ${unittest_file}
+		fi
+	}
+
+	#if user over 300M limit, send email
+	function send_email_on_moved_file_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file}
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${FALSE} ${TRUE}
+	}
+
+	#get user to the correct group
+	function retrieve_user_group_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file}
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${FALSE} ${TRUE}
+	}
+	
+	#move any file over 300Megs to appropriate hdfs location
+	function move_files_over_limit_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file}
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${FALSE} ${TRUE}
+	}
+
+	#read into an array
+	function readfile_into_array_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file}
+		report_file="unittest/badusers_unittest.txt"
+		
+		rm ${report_file}
+		echo "11-12-15|user2|5GB" >> ${report_file}
+		echo "11-13-15|user1|6GB" >> ${report_file}
+		echo "11-14-15|user2|6GB" >> ${report_file}
+		echo "11-15-15|user1|6GB" >> ${report_file}
+		echo "11-16-15|user1|6GB" >> ${report_file}
+		echo "11-17-15|user1|6GB" >> ${report_file}
+		echo "11-18-15|user3|6GB" >> ${report_file}
+
+		#add latest date in there, and test to make sure it has at least 1 date
+		local mydate=$(date +%m-%d-%y) 
+		echo "${mydate}|user3|6GB" >> ${report_file} 
+	
+		report_days_back=0
+		readfile_into_array "${home}/${report_file}"
+		#sed will exclude blank lanes
+		#local file_line_count=$(cat ${home}/${report_file} | sed '/^\s*$/d' | wc -l)
+		local file_line_count=1
+		local arraysize=${#suspected_users[*]}
+		#if there's at least 1, ie, <= 1, which is accomplished by negation
+		if [[ ! ${file_line_count} -gt ${arraysize} ]];then
+			local RETURN_CODE=${TRUE}
+		else
+			RETURN_CODE=${FALSE}
+		fi
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${TRUE} ${RETURN_CODE}
+	}
+
+	#retrieve users that crosses 300Megs
+	function get_bad_users_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file}
+		user_total_limit=100
+		user_basedir="unittest/users"
+		initialize_report
+		get_bad_users
+		#if there exist at least 1 user in the list, then the query is successful
+		if [[ ${#bad_user_list[*]} -eq 2 ]];then
+			if [[ ${#query_usererror_list[*]} -gt 0 ]];then
+				local RETURN_CODE=${TRUE}
+			else
+				RETURN_CODE=${FALSE}
+			fi
+		else
+			RETURN_CODE=${FALSE}
+		fi
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${TRUE} ${RETURN_CODE}
+	}
+
+	function get_listofbadfiles_peruser_test
+	{
+		echo "Tessting ${FUNCNAME[0]}" >> ${unittest_file}
+		max_file_size="1M"
+		retention_period="1"	
+		local user="user2"
+
+		get_listofbadfiles_peruser "$user"
+		#if there exist at least 1 user in the list, then the query is successful
+		if [[ ${#bad_file_list[*]} -gt 0 ]];then
+			local RETURN_CODE=${TRUE}
+		else
+			RETURN_CODE=${FALSE}
+		fi
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${TRUE} ${RETURN_CODE}
+	}
+
+	#get file size
+	function get_file_size_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file}
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${FALSE} ${TRUE}
+	}
+	
+	#get file age 
+	function get_file_age_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file} 
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${FALSE} ${TRUE}
+	}
+
+	#find repeated offenders
+	function find_repeated_offenders_test
+	{
+		echo "Testing ${FUNCNAME[0]}" >> ${unittest_file} 
+		suspected_users=("11-17-2015|user1/|0.139481|", "11-17-2015|user2/|0.164787|", "11-17-2015|user2/|0.164787|", "11-17-2015|user1/|0.164787|", "11-17-2015|user3/|0.164787|")
+		find_repeated_offenders
+		if [[ ${#repeated_offenders[*]} -eq 3 ]];then
+			local RETURN_CODE=${TRUE}
+		else
+			RETURN_CODE=${FALSE}
+		fi
+		assertEquals ">>>TEST ${FUNCNAME[0]}" ${TRUE} ${RETURN_CODE}
+	}
+
+	#what to do with directories that have small files over 300megs
+		#-move directory 
+
+	#test all functions
+	initialize
+	init_unittest
+	get_bad_users_test
+	readfile_into_array_test
+	find_repeated_offenders_test
+	
+	#send_email_on_moved_file_test
+	#retrieve_user_group_test
+	#move_files_over_limit_test
+	#get_listofbadfiles_peruser_test	
+	#get_file_size_test
+	#get_file_age_test
+	#file_with_space_test
+	echo "-------UNIT TEST RESULT-----"
+	cat ${unittest_file}
+)

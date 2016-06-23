@@ -1,0 +1,188 @@
+2015-11-24 13:52:04~4337~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 13:55:25~4499~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 13:55:25~4499~misterclean.sh~clean_local~493 ENTERING FUNCTION
+2015-11-24 13:55:25~4499~misterclean.sh~check_user_spaceusage~399 ENTERING FUNCTION
+2015-11-24 13:55:25~4499~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-24 13:55:25~4499~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-24 13:55:25~4499~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-24 13:55:25~4499~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-24 13:55:25~4499~misterclean.sh~generate_badusers_report~Generating bad users report to bad_users_report.txt. Nbr of bad users found: 0
+2015-11-24 13:55:25~4499~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-24 13:55:25~4499~misterclean.sh~check_user_spaceusage~412 Recalling function to read into array without date range
+2015-11-24 13:55:25~4499~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-24 13:57:11~4573~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 13:57:11~4573~misterclean.sh~clean_local~493 ENTERING FUNCTION
+2015-11-24 13:57:11~4573~misterclean.sh~check_user_spaceusage~399 ENTERING FUNCTION
+2015-11-24 13:57:11~4573~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-24 13:57:11~4573~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-24 13:57:11~4573~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-11-24 13:57:11~4573~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-24 13:57:11~4573~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-11-24 13:57:11~4573~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-24 13:57:11~4573~misterclean.sh~generate_badusers_report~Generating bad users report to bad_users_report.txt. Nbr of bad users found: 2
+2015-11-24 13:57:11~4573~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-24 13:57:11~4573~misterclean.sh~check_user_spaceusage~412 Recalling function to read into array without date range
+2015-11-24 15:54:27~1577~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 15:59:07~1793~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 15:59:20~1898~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 16:01:15~2009~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 16:06:25~2128~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 16:29:26~2502~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-24 16:29:26~2502~misterclean.sh~clean_local~493 ENTERING FUNCTION
+2015-11-24 16:29:26~2502~misterclean.sh~check_user_spaceusage~399 ENTERING FUNCTION
+2015-11-24 16:29:26~2502~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-24 16:29:26~2502~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-24 16:29:26~2502~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-11-24 16:29:26~2502~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-24 16:29:26~2502~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-11-24 16:29:26~2502~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-24 16:29:26~2502~misterclean.sh~generate_badusers_report~Generating bad users report to bad_users_report.txt. Nbr of bad users found: 2
+2015-11-24 16:29:26~2502~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-24 16:29:26~2502~misterclean.sh~check_user_spaceusage~412 Recalling function to read into array without date range
+2015-11-26 00:04:19~3734~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-26 00:04:19~3734~misterclean.sh~clean_local~493 ENTERING FUNCTION
+2015-11-26 00:04:19~3734~misterclean.sh~check_user_spaceusage~399 ENTERING FUNCTION
+2015-11-26 00:04:19~3734~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-26 00:04:19~3734~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-26 00:04:19~3734~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-11-26 00:04:19~3734~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-26 00:04:19~3734~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-11-26 00:04:19~3734~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-26 00:04:19~3734~misterclean.sh~generate_badusers_report~Generating bad users report to bad_users_report.txt. Nbr of bad users found: 2
+2015-11-26 00:04:19~3734~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-26 00:04:19~3734~misterclean.sh~check_user_spaceusage~412 Recalling function to read into array without date range
+2015-11-26 00:04:29~3826~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-26 00:04:29~3826~misterclean.sh~clean_local~493 ENTERING FUNCTION
+2015-11-26 00:04:29~3826~misterclean.sh~check_user_spaceusage~399 ENTERING FUNCTION
+2015-11-26 00:04:29~3826~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-26 00:04:29~3826~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-26 00:04:29~3826~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-11-26 00:04:29~3826~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-26 00:04:29~3826~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-11-26 00:04:29~3826~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-26 00:04:29~3826~misterclean.sh~generate_badusers_report~Generating bad users report to bad_users_report.txt. Nbr of bad users found: 2
+2015-11-26 00:04:29~3826~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-26 00:04:29~3826~misterclean.sh~check_user_spaceusage~412 Recalling function to read into array without date range
+2015-11-26 00:04:52~3915~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-26 00:04:52~3915~misterclean.sh~clean_local~493 ENTERING FUNCTION
+2015-11-26 00:04:52~3915~misterclean.sh~check_user_spaceusage~399 ENTERING FUNCTION
+2015-11-26 00:04:52~3915~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-26 00:04:52~3915~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-26 00:04:52~3915~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-11-26 00:04:52~3915~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-26 00:04:52~3915~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-11-26 00:04:52~3915~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-26 00:04:52~3915~misterclean.sh~generate_badusers_report~Generating bad users report to bad_users_report.txt. Nbr of bad users found: 2
+2015-11-26 00:04:52~3915~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2015-11-26 00:04:52~3915~misterclean.sh~check_user_spaceusage~412 Recalling function to read into array without date range
+2015-12-01 10:51:04~3581~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:51:25~3712~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:51:28~3844~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:52:01~3975~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:52:05~4107~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:52:40~4238~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:54:13~4428~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 10:54:35~4566~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 11:13:07~4745~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 11:14:07~4888~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:37:04~1328~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:44:02~1507~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:45:18~1530~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:49:37~1565~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:51:43~1590~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:54:50~1920~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:54:55~1978~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:55:05~1996~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:55:58~2258~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 13:56:09~2283~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:09:04~2354~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:09:47~2379~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:32:48~2702~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:34:15~2727~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:50:29~2797~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:57:14~2851~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-01 14:59:18~3108~misterclean.sh~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:03:30~3703~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:08:47~3770~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:13:33~3877~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:24:19~4178~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:24:39~4231~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:27:02~4277~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:27:05~4314~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-05 12:32:20~4363~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 09:42:33~8391~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 10:13:24~8577~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 10:33:42~8894~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 11:41:30~9379~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 11:41:42~9404~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 11:48:18~9438~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 11:54:40~9516~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 11:54:46~9543~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 11:56:42~9574~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 14:49:33~10631~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 14:54:00~10668~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:06:40~10791~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:16:15~10842~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:16:23~10860~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:21:58~11081~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:22:35~11299~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:22:42~11390~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:26:40~11494~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-12-07 15:26:54~11579~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2016-01-06 22:52:00~28819~misterclean.sh~verify_unix_shell~96 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2016-01-06 22:52:00~28819~misterclean.sh~main~*********STARTING misterclean***********
+2016-01-06 22:52:00~28819~misterclean.sh~check_config_variable~33 ENTERING FUNCTION
+2016-01-06 22:52:00~28819~misterclean.sh~get_local_offenders~588 ENTERING FUNCTION
+2016-01-06 22:52:00~28819~misterclean.sh~has_enough_space~276 INFO Checking required space: 1G on mount: /u
+2016-01-06 22:52:00~28819~misterclean.sh~has_enough_space~320 Checking local server
+2016-01-06 22:52:00~28819~misterclean.sh~has_enough_space~329 ERROR executing command to get available space. rc=0. cmd=df -PH /u | tail -1 | awk '{print }'
+2016-01-06 22:52:00~28819~misterclean.sh~check_user_spaceusage~400 ENTERING FUNCTION
+2016-01-06 22:52:00~28819~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2016-01-06 22:52:00~28819~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-06 22:52:00~28819~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-06 22:52:01~28819~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-06 22:52:01~28819~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-06 22:52:01~28819~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-06 22:52:01~28819~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-06 22:52:01~28819~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2016-01-06 22:52:01~28819~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2016-01-06 22:52:01~28819~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/report_bad_users.txt. Nbr of bad users found: 4
+2016-01-06 22:52:01~28819~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2016-01-06 22:52:01~28819~misterclean.sh~readfile_into_array~348 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2016-01-06 22:52:01~28819~misterclean.sh~check_user_spaceusage~415 Recalling function to read into array without date range
+2016-01-06 22:52:01~28819~misterclean.sh~main~*********ENDING misterclean***********
+2016-01-06 23:08:22~71856~misterclean.sh~verify_unix_shell~11 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2016-01-06 23:08:22~71856~misterclean.sh~main~*********STARTING misterclean***********
+2016-01-06 23:08:22~71856~misterclean.sh~check_config_variable~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_local_offenders~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~has_enough_space~11 INFO Checking required space: 1G on mount: /u
+2016-01-06 23:08:22~71856~misterclean.sh~has_enough_space~282 Checking local server
+2016-01-06 23:08:22~71856~misterclean.sh~has_enough_space~291 ERROR executing command to get available space. rc=0. cmd=df -PH /u | tail -1 | awk '{print }'
+2016-01-06 23:08:22~71856~misterclean.sh~check_user_spaceusage~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~check_userdir_permission~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-06 23:08:22~71856~misterclean.sh~check_userdir_permission~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-06 23:08:22~71856~misterclean.sh~check_userdir_permission~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-06 23:08:22~71856~misterclean.sh~check_userdir_permission~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-06 23:08:22~71856~misterclean.sh~check_userdir_permission~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~get_bad_users~127 WARNING Potential issues while querying user user3/
+2016-01-06 23:08:22~71856~misterclean.sh~generate_badusers_report~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/report_bad_users.txt. Nbr of bad users found: 4
+2016-01-06 23:08:22~71856~misterclean.sh~generate_usererror_report~1 ENTERING FUNCTION
+2016-01-06 23:08:22~71856~misterclean.sh~readfile_into_array~49 WARNING Please check nbr of days back, it might go beyond report kept date or report of bad user is empty
+2016-01-06 23:08:22~71856~misterclean.sh~check_user_spaceusage~377 Recalling function to read into array without date range

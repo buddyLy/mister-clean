@@ -1,0 +1,62 @@
+Testing send_email_on_moved_file_test
+>>>TEST send_email_on_moved_file_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing retrieve_user_group_test
+>>>TEST retrieve_user_group_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing move_files_over_limit_test
+>>>TEST move_files_over_limit_test: FAILED: EXPECTED=0 ACTUAL=1
+Tessting get_bad_user_list_test
+>>>TEST get_bad_user_list_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_size_test
+>>>TEST get_file_size_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_age_test
+>>>TEST get_file_age_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing send_email_on_moved_file_test
+>>>TEST send_email_on_moved_file_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing retrieve_user_group_test
+>>>TEST retrieve_user_group_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing move_files_over_limit_test
+>>>TEST move_files_over_limit_test: FAILED: EXPECTED=0 ACTUAL=1
+Tessting get_bad_user_list_test
+>>>TEST get_bad_user_list_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_size_test
+>>>TEST get_file_size_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_age_test
+>>>TEST get_file_age_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing send_email_on_moved_file_test
+>>>TEST send_email_on_moved_file_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing retrieve_user_group_test
+>>>TEST retrieve_user_group_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing move_files_over_limit_test
+>>>TEST move_files_over_limit_test: FAILED: EXPECTED=0 ACTUAL=1
+Tessting get_bad_user_list_test
+>>>TEST get_bad_user_list_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_size_test
+>>>TEST get_file_size_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_age_test
+>>>TEST get_file_age_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing send_email_on_moved_file_test
+>>>TEST send_email_on_moved_file_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing retrieve_user_group_test
+>>>TEST retrieve_user_group_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing move_files_over_limit_test
+>>>TEST move_files_over_limit_test: FAILED: EXPECTED=0 ACTUAL=1
+Tessting get_bad_user_list_test
+>>>TEST get_bad_user_list_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_size_test
+>>>TEST get_file_size_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_age_test
+>>>TEST get_file_age_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing send_email_on_moved_file_test
+>>>TEST send_email_on_moved_file_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing retrieve_user_group_test
+>>>TEST retrieve_user_group_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing move_files_over_limit_test
+>>>TEST move_files_over_limit_test: FAILED: EXPECTED=0 ACTUAL=1
+Tessting get_bad_user_list_test
+>>>TEST get_bad_user_list_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_size_test
+>>>TEST get_file_size_test: FAILED: EXPECTED=0 ACTUAL=1
+Testing get_file_age_test
+>>>TEST get_file_age_test: FAILED: EXPECTED=0 ACTUAL=1
+Tessting get_bad_users_test
+>>>TEST get_bad_users_test: FAILED: EXPECTED=0 ACTUAL=1

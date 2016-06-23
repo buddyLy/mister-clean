@@ -1,0 +1,5 @@
+returning still bad users:\n user4/
+-------UNIT TEST RESULT-----
+******Starting unit tests at Thu Feb 25 09:48:30 CST 2016*******
+Testing check_user_still_bad_test
+>>>TEST check_user_still_bad_test: PASSED

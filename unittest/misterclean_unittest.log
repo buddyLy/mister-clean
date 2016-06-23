@@ -1,0 +1,520 @@
+2015-11-24 16:06:25~2128~misterclean.sh~get_bad_users~149 ENTERING FUNCTION
+2015-11-24 16:06:25~2128~misterclean.sh~get_bad_users~Checking user user1/
+2015-11-24 16:06:25~2128~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-11-24 16:06:25~2128~misterclean.sh~get_bad_users~Checking user user2/
+2015-11-24 16:06:25~2128~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-11-24 16:06:25~2128~misterclean.sh~get_bad_users~168 WARNING Potential issues while querying user user3/
+2015-11-24 16:06:25~2128~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-11-29 03:09:02~1977~~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-29 03:09:02~1977~~has_enough_space~284 INFO Checking required space: 1T on mount: /u
+2015-11-29 03:09:02~1977~~has_enough_space~Checking remote server
+2015-11-29 03:09:19~1977~~exec_remote_cmd~Error executing remote command on rlimport at .  cmd: df -Ph /u with error code: 255
+2015-11-29 03:10:06~2109~~verify_unix_shell~92 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-29 03:14:30~2245~~verify_unix_shell~93 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-29 03:14:57~2254~~verify_unix_shell~93 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-29 03:15:02~2261~~verify_unix_shell~93 WARNING program not tested for this OS. Detected OS=Darwin. Supported OS=Linux
+2015-11-29 23:33:02~1966~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-29 23:33:02~1966~~has_enough_space~328 Checking local server
+2015-11-29 23:33:02~1966~~has_enough_space~You have enough space to transfer. Need: 1000000000000 Available: 
+2015-11-29 23:38:32~2048~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-29 23:38:32~2048~~has_enough_space~328 Checking local server
+2015-11-29 23:38:32~2048~~has_enough_space~You have enough space to transfer. Need: 1000000000000 Available: 
+2015-11-29 23:39:03~2087~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-29 23:39:03~2087~~has_enough_space~328 Checking local server
+2015-11-29 23:39:03~2087~~has_enough_space~365 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 348000000000
+2015-11-30 13:09:39~628~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-30 13:09:39~628~~has_enough_space~328 Checking local server
+2015-11-30 13:09:39~628~~has_enough_space~365 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 349000000000
+2015-11-30 15:07:39~1013~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-30 15:07:39~1013~~has_enough_space~328 Checking local server
+2015-11-30 15:07:39~1013~~has_enough_space~368 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 348000000000
+2015-11-30 15:07:55~1050~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-30 15:07:55~1050~~has_enough_space~328 Checking local server
+2015-11-30 15:07:55~1050~~has_enough_space~368 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 348000000000
+2015-11-30 15:10:38~1097~~has_enough_space~284 INFO Checking required space: 1T on mount: /Users
+2015-11-30 15:10:38~1097~~has_enough_space~328 Checking local server
+2015-11-30 15:10:38~1097~~has_enough_space~368 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 349000000000
+2015-11-30 15:11:21~1136~~has_enough_space~284 INFO Checking required space: 349T on mount: /Users
+2015-11-30 15:11:21~1136~~has_enough_space~328 Checking local server
+2015-11-30 15:11:21~1136~~has_enough_space~368 ERROR Location does not have enough available space to transfer file. Need: 349000000000000 Available: 349000000000
+2015-11-30 15:16:30~1276~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:16:30~1276~~has_enough_space~328 Checking local server
+2015-11-30 15:16:30~1276~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:16:36~1313~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:16:36~1313~~has_enough_space~328 Checking local server
+2015-11-30 15:16:36~1313~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:21:05~1471~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:21:05~1471~~has_enough_space~328 Checking local server
+2015-11-30 15:21:05~1471~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:21:31~1515~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:21:31~1515~~has_enough_space~328 Checking local server
+2015-11-30 15:21:31~1515~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:21:45~1561~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:21:45~1561~~has_enough_space~328 Checking local server
+2015-11-30 15:21:45~1561~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:25:02~1627~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:25:02~1627~~has_enough_space~328 Checking local server
+2015-11-30 15:25:02~1627~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:32:44~1848~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:32:44~1848~~has_enough_space~328 Checking local server
+2015-11-30 15:32:44~1848~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:33:08~1915~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:33:08~1915~~has_enough_space~328 Checking local server
+2015-11-30 15:33:08~1915~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 15:33:50~1971~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 15:33:50~1971~~has_enough_space~328 Checking local server
+2015-11-30 15:33:50~1971~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 16:10:58~2273~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 16:10:58~2273~~has_enough_space~328 Checking local server
+2015-11-30 16:10:58~2273~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-11-30 16:11:14~2352~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-11-30 16:11:14~2352~~has_enough_space~328 Checking local server
+2015-11-30 16:11:14~2352~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-12-01 10:42:13~2366~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-12-01 10:42:13~2366~~has_enough_space~328 Checking local server
+2015-12-01 10:42:13~2366~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 350000000000
+2015-12-01 10:51:04~3581~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:51:04~3581~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:04~3581~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:51:04~3581~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:51:04~3581~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:04~3581~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:51:04~3581~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:51:04~3581~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:04~3581~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:51:04~3581~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:51:04~3581~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:51:04~3581~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:51:25~3712~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:51:25~3712~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:25~3712~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:51:25~3712~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:51:25~3712~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:25~3712~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:51:25~3712~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:51:25~3712~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:25~3712~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:51:25~3712~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:51:25~3712~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:51:25~3712~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:51:28~3844~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:51:28~3844~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:28~3844~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:51:28~3844~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:51:28~3844~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:28~3844~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:51:28~3844~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:51:28~3844~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:51:28~3844~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:51:28~3844~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:51:28~3844~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:51:28~3844~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:52:01~3975~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:52:01~3975~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:01~3975~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:52:01~3975~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:52:01~3975~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:01~3975~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:52:01~3975~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:52:01~3975~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:01~3975~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:52:01~3975~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:52:01~3975~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:52:01~3975~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:52:05~4107~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:52:05~4107~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:05~4107~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:52:05~4107~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:52:05~4107~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:05~4107~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:52:05~4107~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:52:05~4107~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:05~4107~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:52:05~4107~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:52:05~4107~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:52:05~4107~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:52:40~4238~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:52:40~4238~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:40~4238~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:52:40~4238~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:52:40~4238~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:40~4238~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:52:40~4238~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:52:40~4238~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:52:40~4238~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:52:40~4238~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:52:40~4238~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:52:40~4238~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:54:13~4428~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:54:13~4428~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:54:13~4428~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:54:13~4428~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:54:13~4428~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:54:13~4428~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:54:13~4428~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:54:13~4428~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:54:13~4428~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:54:13~4428~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:54:13~4428~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:54:13~4428~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 10:54:35~4566~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 10:54:35~4566~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:54:35~4566~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 10:54:35~4566~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 10:54:35~4566~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:54:35~4566~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 10:54:35~4566~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 10:54:35~4566~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 10:54:35~4566~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 10:54:35~4566~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 10:54:35~4566~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 10:54:35~4566~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 11:13:07~4745~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 11:13:07~4745~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 11:13:07~4745~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 11:13:07~4745~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 11:13:07~4745~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 11:13:07~4745~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 11:13:07~4745~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 11:13:07~4745~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 11:13:07~4745~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 11:13:07~4745~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 11:13:07~4745~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 11:13:07~4745~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 11:14:07~4888~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 11:14:07~4888~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 11:14:07~4888~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 11:14:07~4888~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 11:14:07~4888~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 11:14:07~4888~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 11:14:07~4888~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 11:14:07~4888~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 11:14:07~4888~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 11:14:07~4888~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 11:14:07~4888~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 11:14:07~4888~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 13:37:04~1328~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 13:37:04~1328~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:37:04~1328~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 13:37:04~1328~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 13:37:04~1328~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:37:04~1328~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 13:37:04~1328~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 13:37:04~1328~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:37:04~1328~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 13:37:04~1328~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 13:37:04~1328~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 13:37:04~1328~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 13:51:43~1590~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 13:51:43~1590~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:51:43~1590~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 13:51:43~1590~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 13:51:43~1590~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:51:43~1590~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 13:51:43~1590~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 13:51:43~1590~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:51:43~1590~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 13:51:43~1590~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 13:51:43~1590~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 13:51:43~1590~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 13:54:50~1920~misterclean.sh~get_bad_users~153 ENTERING FUNCTION
+2015-12-01 13:54:50~1920~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:54:50~1920~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-01 13:54:50~1920~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-01 13:54:50~1920~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:54:50~1920~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-01 13:54:50~1920~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-01 13:54:50~1920~misterclean.sh~check_userdir_permission~98 ENTERING FUNCTION
+2015-12-01 13:54:50~1920~misterclean.sh~get_bad_users~172 WARNING Potential issues while querying user user3/
+2015-12-01 13:54:50~1920~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2015-12-01 13:54:50~1920~misterclean.sh~generate_badusers_report~Generating bad users report to unittest/baduser_unittest_report.txt. Nbr of bad users found: 2
+2015-12-01 13:54:50~1920~misterclean.sh~generate_usererror_report~138 ENTERING FUNCTION
+2015-12-01 14:14:12~2417~~has_enough_space~284 INFO Checking required space: 1G on mount: /Users
+2015-12-01 14:14:12~2417~~has_enough_space~328 Checking local server
+2015-12-01 14:14:12~2417~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 350000000000
+2015-12-02 21:54:16~911~~has_enough_space~290 INFO Checking required space: 1G on mount: /Users
+2015-12-02 21:54:16~911~~has_enough_space~334 Checking local server
+2015-12-02 21:54:16~911~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-12-02 22:28:24~1434~~has_enough_space~290 INFO Checking required space: 1G on mount: /Users
+2015-12-02 22:28:24~1434~~has_enough_space~334 Checking local server
+2015-12-02 22:28:24~1434~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-12-02 22:29:36~1515~~has_enough_space~290 INFO Checking required space: 1G on mount: /Users
+2015-12-02 22:29:36~1515~~has_enough_space~334 Checking local server
+2015-12-02 22:29:36~1515~~has_enough_space~You have enough space to transfer. Need: 1000000000 Available: 349000000000
+2015-12-02 22:31:00~1558~~has_enough_space~290 INFO Checking required space: 1T on mount: /Users
+2015-12-02 22:31:00~1558~~has_enough_space~334 Checking local server
+2015-12-02 22:31:00~1558~~has_enough_space~374 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 349000000000
+2015-12-02 22:31:06~1595~~has_enough_space~290 INFO Checking required space: 1T on mount: /Users
+2015-12-02 22:31:06~1595~~has_enough_space~334 Checking local server
+2015-12-02 22:31:06~1595~~has_enough_space~374 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 349000000000
+2015-12-02 22:32:51~1641~~has_enough_space~291 INFO Checking required space: 1T on mount: /Users
+2015-12-02 22:32:51~1641~~has_enough_space~335 Checking local server
+2015-12-02 22:32:51~1641~~has_enough_space~375 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 349000000000
+2015-12-02 22:33:33~1688~~has_enough_space~291 INFO Checking required space: 1T on mount: /Users
+2015-12-02 22:33:33~1688~~has_enough_space~335 Checking local server
+2015-12-02 22:33:33~1688~~has_enough_space~375 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 349000000000
+2015-12-05 12:36:50~4416~~has_enough_space~276 INFO Checking required space: 1T on mount: /Users
+2015-12-05 12:36:50~4416~~has_enough_space~320 Checking local server
+2015-12-05 12:36:50~4416~~has_enough_space~360 ERROR Location does not have enough available space to transfer file. Need: 1000000000000 Available: 345000000000
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Checking user lcle/
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2015-12-07 15:16:23~10860~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Checking user svcckp/
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2015-12-07 15:16:23~10860~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-07 15:16:23~10860~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-07 15:16:23~10860~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2015-12-07 15:16:23~10860~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~get_bad_users~Checking user user4/
+2015-12-07 15:16:23~10860~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2015-12-07 15:16:23~10860~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2015-12-07 15:16:23~10860~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Checking user lcle/
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2015-12-07 15:21:58~11081~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Checking user svcckp/
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2015-12-07 15:21:58~11081~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-07 15:21:58~11081~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-07 15:21:58~11081~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2015-12-07 15:21:58~11081~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~get_bad_users~Checking user user4/
+2015-12-07 15:21:58~11081~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2015-12-07 15:21:58~11081~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2015-12-07 15:21:58~11081~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Checking user lcle/
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2015-12-07 15:22:35~11299~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Checking user svcckp/
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2015-12-07 15:22:35~11299~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-07 15:22:35~11299~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-07 15:22:35~11299~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2015-12-07 15:22:35~11299~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~get_bad_users~Checking user user4/
+2015-12-07 15:22:35~11299~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2015-12-07 15:22:35~11299~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2015-12-07 15:22:35~11299~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Checking user lcle/
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2015-12-07 15:22:42~11390~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Checking user svcckp/
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2015-12-07 15:22:42~11390~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-07 15:22:42~11390~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-07 15:22:42~11390~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2015-12-07 15:22:42~11390~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~get_bad_users~Checking user user4/
+2015-12-07 15:22:42~11390~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2015-12-07 15:22:42~11390~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2015-12-07 15:22:42~11390~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Checking user lcle/
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2015-12-07 15:26:40~11494~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Checking user svcckp/
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2015-12-07 15:26:40~11494~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-07 15:26:40~11494~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-07 15:26:40~11494~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2015-12-07 15:26:40~11494~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2015-12-07 15:26:40~11494~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2015-12-07 15:26:40~11494~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~145 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Checking user lcle/
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2015-12-07 15:26:54~11579~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Checking user svcckp/
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2015-12-07 15:26:54~11579~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Checking user user1/
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2015-12-07 15:26:54~11579~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Checking user user2/
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2015-12-07 15:26:54~11579~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~get_bad_users~165 WARNING Potential issues while querying user user3/
+2015-12-07 15:26:54~11579~misterclean.sh~generate_badusers_report~117 ENTERING FUNCTION
+2015-12-07 15:26:54~11579~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2015-12-07 15:26:54~11579~misterclean.sh~generate_usererror_report~130 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 08:46:08~50799~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 08:46:08~50799~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 08:46:08~50799~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 08:46:08~50799~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 08:46:08~50799~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 08:46:08~50799~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 08:46:08~50799~misterclean.sh~error_exit~119 ERROR. Error sorting report
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 08:47:06~50895~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 08:47:06~50895~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 08:47:06~50895~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 08:47:06~50895~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 08:47:06~50895~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 08:47:06~50895~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 08:47:06~50895~misterclean.sh~error_exit~119 ERROR. Error sorting report
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 08:49:20~50987~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 08:49:20~50987~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 08:49:20~50987~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 08:49:20~50987~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 08:49:20~50987~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 08:49:20~50987~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 08:49:20~50987~misterclean.sh~error_exit~119 ERROR. Error sorting report
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 08:49:46~51078~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 08:49:46~51078~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 08:49:46~51078~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 08:49:46~51078~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 08:49:46~51078~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 08:49:46~51078~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 08:49:46~51078~misterclean.sh~error_exit~119 ERROR. Error sorting report
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 08:51:09~51168~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 08:51:09~51168~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 08:51:09~51168~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 08:51:09~51168~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 08:51:09~51168~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 08:51:09~51168~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 08:51:09~51168~misterclean.sh~generate_usererror_report~139 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 08:55:46~51405~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 08:55:46~51405~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 08:55:46~51405~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 08:55:46~51405~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 08:55:46~51405~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 08:55:46~51405~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 08:55:46~51405~misterclean.sh~generate_usererror_report~139 ENTERING FUNCTION
+2016-01-10 11:24:32~52832~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-10 11:24:32~52832~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-10 11:24:33~52832~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Adding user svcckp/ to bad list
+2016-01-10 11:24:33~52832~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-10 11:24:33~52832~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-10 11:24:33~52832~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-10 11:24:33~52832~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-10 11:24:33~52832~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-10 11:24:33~52832~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-10 11:24:33~52832~misterclean.sh~generate_usererror_report~139 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~154 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Checking user lcle/
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Adding user lcle/ to bad list
+2016-01-17 23:48:24~60007~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Checking user svcckp/
+2016-01-17 23:48:24~60007~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Checking user user1/
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Adding user user1/ to bad list
+2016-01-17 23:48:24~60007~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Checking user user2/
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Adding user user2/ to bad list
+2016-01-17 23:48:24~60007~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~174 WARNING Potential issues while querying user user3/
+2016-01-17 23:48:24~60007~misterclean.sh~check_userdir_permission~90 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Checking user user4/
+2016-01-17 23:48:24~60007~misterclean.sh~get_bad_users~Adding user user4/ to bad list
+2016-01-17 23:48:24~60007~misterclean.sh~generate_badusers_report~125 ENTERING FUNCTION
+2016-01-17 23:48:24~60007~misterclean.sh~generate_badusers_report~Generating bad users report to /Users/lcle/git/wmgit/bitbucket/mister-clean/unittest/baduser_unittest_report.txt. Nbr of bad users found: 4
+2016-01-17 23:48:24~60007~misterclean.sh~generate_usererror_report~139 ENTERING FUNCTION
